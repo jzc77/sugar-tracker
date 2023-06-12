@@ -28,7 +28,6 @@ This personal project is intended to be a sugar tracker application for new pare
 <h3 align="center">
   View a specific child's food intake and total sugar consumed <br/>
 </h2>
-<br/>
 
 # Tech stack
 - Frontend: React, Material UI, CSS
