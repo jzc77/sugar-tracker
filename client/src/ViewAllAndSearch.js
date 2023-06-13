@@ -13,7 +13,7 @@ function ViewAllAndSearch() {
   // Get all children's data
   const getAllChildrenData = async (e) => {
     try {
-      const res = await axios.get("http://localhost:6001/")
+      const res = await axios.get("https://sugar-tracker-backend.onrender.com/")  // "http://localhost:6001/"
       setChildrenData(res.data.allChildData);
     } catch (err) {
       console.log(err);
@@ -29,7 +29,7 @@ function ViewAllAndSearch() {
   const handleSearchBasedOnId = async (e) => {
     setIdSubmitted("clicked once");
     try {
-      await axios.get(`http://localhost:6001/${childID}`).then((response) => {
+      await axios.get(`https://sugar-tracker-backend.onrender.com/${childID}`).then((response) => {  // `http://localhost:6001/${childID}`
         setChildData(response.data[0])
 
         // Calculate total sugar

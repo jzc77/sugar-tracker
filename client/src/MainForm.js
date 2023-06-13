@@ -19,7 +19,7 @@ function MainForm() {
   const handleFindFoodItem = async (e) => {
     setFindFoodItemSubmitted(!findFoodItemSubmitted);
     try {
-      await axios.post("http://localhost:6001/foodItem", { foodEaten }).then((response) => {
+      await axios.post("https://sugar-tracker-backend.onrender.com/foodItem", { foodEaten }).then((response) => {  // "http://localhost:6001/foodItem"
         setlistOfFoodEaten(response.data)
       }).catch((err) => {
         console.log(err);
@@ -35,7 +35,7 @@ function MainForm() {
       const foodEatenSelected = e.target.textContent;
       setfoodEaten(foodEatenSelected)
 
-      await axios.post("http://localhost:6001/foodItem2", { foodEatenSelected }).then((response) => {
+      await axios.post("https://sugar-tracker-backend.onrender.com/foodItem2", { foodEatenSelected }).then((response) => {  // "http://localhost:6001/foodItem2"
         setGramSugarPerServing(response.data.gramSugarPerServing)
       }).catch((err) => {
         console.log(err);
@@ -50,7 +50,7 @@ function MainForm() {
   // Add all form data to database
   const handleSubmit = async (e) => {
     try {
-      await axios.post("http://localhost:6001/", { childID, childName, foodEaten, quantityEaten, gramSugarPerServing });
+      await axios.post("https://sugar-tracker-backend.onrender.com/", { childID, childName, foodEaten, quantityEaten, gramSugarPerServing });  // "http://localhost:6001/"
     } catch (err) {
       console.log(err);
     }
